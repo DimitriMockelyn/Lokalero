@@ -23,6 +23,8 @@ just run:  **php artisan make:auth**
 ## Launch the app
 
  - To go live: **php artisan serve**
- - **npm run dev**, and then the react component will pop.
-	*Congratz*
-I just put two forms for testing, one for saving mails with the validation and the mailing form with the validation too.
+ - **npm run dev** So the react component will pop.
+
+I just put two forms for testing and the both forms are built with validation, all the inputs are required and the email input has an email validation to avoid dummy data. 
+
+*Congratz*
