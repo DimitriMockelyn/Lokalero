@@ -16,10 +16,10 @@ Route::prefix('api/')->group(function()
 	Route::resource('projects', 'ProjectsController');
 });
 
-//store email (data)
+//Subscribe
 Route::post('/subscribe', 'NewsletterController@subscribe');
 // send email to admin
-Route::post('/contact-lokalero', 'ContactLokaleroController@send');
+Route::post('/contact-lokalero', 'ContactController@sendToAdmin');
 
 Route::get('/', function(){
 	return view('welcome');
