@@ -10,13 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
+
+Route::prefix('api/')->group(function() 
+{
+	Route::resource('projects', 'ProjectsController');
 });
 
 //store email (data)
-Route::post('/save-contact', 'StoreMailController@save');
+Route::post('/subscribe', 'NewsletterController@subscribe');
 // send email to admin
 Route::post('/contact-lokalero', 'ContactLokaleroController@send');
+
+Route::get('/', function(){
+	return view('welcome');
+});
 
 

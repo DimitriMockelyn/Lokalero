@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactMailsTable extends Migration
+class CreateTabletProjectLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateContactMailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_mails', function (Blueprint $table) {
+        Schema::create('tablet_project_links', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateContactMailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_mails');
+        Schema::dropIfExists('tablet_project_links');
     }
 }

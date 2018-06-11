@@ -9,7 +9,7 @@
     </head>
     <body>
     <div id="example"></div>
-<form method="POST" action="/save-contact">
+<form method="POST" action="/subscribe">
     @csrf
         <input name="email" type="text">
         <button type="submit"> Save mail </button>
