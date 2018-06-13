@@ -65,7 +65,7 @@ class Popup extends React.Component {
       }
       this.setState(state);
       if (toSend) {
-        fetch('/save-contact', {
+        fetch('/subscribe', {
           body: JSON.stringify(entity),
           headers: {
             'content-type': 'application/json',
