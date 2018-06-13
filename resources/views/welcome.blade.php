@@ -12,6 +12,7 @@
 <form method="POST" action="/subscribe">
     @csrf
         <input name="email" type="text">
+        <input name="zipcode" type="text">
         <button type="submit"> Save mail </button>
 </form>
 <form method="POST" action="/contact-lokalero">

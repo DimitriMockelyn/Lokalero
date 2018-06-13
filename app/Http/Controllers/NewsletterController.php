@@ -8,13 +8,13 @@ use App\Http\Requests\Subscriber;
 use Newsletter;
 class NewsletterController extends Controller
 {
-    public function subscribe(Subscriber $request) {
+    public function subscribe(Subscriber $subscriber) { 
 	    if ( ! Newsletter::isSubscribed($request->email) ) {
-	        Newsletter::subscribe($request->email);
-	        	return  ['success' => 'Vous venez de vous inscrire, merci : )'];
+	    	Newsletter::subscribe($subscriber->email, ['ZIPCODE' => $subscriber->zipcode]);
+	        return  Response::json(['sucess' => 'Merci pour votre inscription : )' ]);
 	    }
 	    else {
-	    	return ['error' => 'Vous êtes déjà inscrit'];
+	    	return  Response::json(['error' => 'Vous êtes déjà inscrit']);
 	    }
     }
 }

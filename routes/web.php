@@ -10,19 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function(){
+	return view('welcome');
+});
+
+//Subscribe via MailChimp
+Route::post('/subscribe', 'NewsletterController@subscribe');
+// send email to admin
+Route::post('/contact-lokalero', 'ContactController@sendToAdmin');
+
+Route::domain('blog.lokalero.app')->group(function () {
+    Route::get('/', 'Blog\HomeController@index')->name('index');
+});
 
 Route::prefix('api/')->group(function() 
 {
 	Route::resource('projects', 'ProjectsController');
 });
-
-//Subscribe
-Route::post('/subscribe', 'NewsletterController@subscribe');
-// send email to admin
-Route::post('/contact-lokalero', 'ContactController@sendToAdmin');
-
-Route::get('/', function(){
-	return view('welcome');
-});
-
 
