@@ -14,3 +14,7 @@
  */
 
 require('./components/Example');
+require('./components/containers/header');
+require('./components/containers/footer');
+require('./components/containers/app');
+require('./components/containers/contact');

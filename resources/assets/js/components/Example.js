@@ -10,7 +10,7 @@ export default class Example extends Component {
                         <div className="card">
                             <div className="card-header">Example Component</div>
                             <div className="card-body">
-                                I'm an example component!
+                                I'm an example component! pouet pouet
                             </div>
                         </div>
                     </div>
