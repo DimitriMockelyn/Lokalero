@@ -11,17 +11,13 @@
 |
 */
 
-Route::get('/', function(){
-	return view('welcome');
+	Route::post('/contact', 'ContactController@admin');
+Route::prefix('/')->group(function() 
+{
+	Route::get('/', function(){ return view('welcome'); });
+	Route::name('index')->get('/contact', function() { return view('contact'); });
+	Route::post('/subscribe', 'NewsletterController@subscribe');
 });
-// Contact page
-Route::get('/contact', function(){
-	return view('contact');
-});
-//Subscribe via MailChimp
-Route::post('/subscribe', 'NewsletterController@subscribe');
-// send email to admin
-Route::post('/contact-lokalero', 'ContactController@sendToAdmin');
 
 
 Route::prefix('api/')->group(function() 

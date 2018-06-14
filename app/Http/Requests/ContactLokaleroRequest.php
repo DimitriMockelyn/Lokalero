@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ContactLokaleroRequest extends FormRequest
 {
+
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -24,10 +26,10 @@ class ContactLokaleroRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'subject' => 'required',
-            'email' => 'required',
-            'body' => 'required'
+            'name' => '',
+            'subject' => '',
+            'email' => '',
+            'body' => ''
         ];
     }
 }

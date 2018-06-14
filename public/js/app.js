@@ -5413,6 +5413,7 @@ var Popup = function (_React$Component) {
               'Vos informations ont bien \xE9t\xE9 enregistr\xE9es :)'
             ));
           } else {
+            console.log(response);
             that.props.alert.error(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { style: { 'textTransform': 'initial', 'width': '100%' } },
@@ -39671,7 +39672,7 @@ var Contact = function (_React$Component) {
       }
       this.setState(state);
       if (toSend) {
-        fetch('/contact-lokalero', {
+        fetch('/contact', {
           body: JSON.stringify(entity),
           headers: {
             'content-type': 'application/json',
@@ -39680,7 +39681,6 @@ var Contact = function (_React$Component) {
           },
           method: 'POST'
         }).then(function (response) {
-          console.log(response);
           if (response.status === 200) {
             that.props.alert.success(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',

@@ -11,7 +11,7 @@ class NewsletterController extends Controller
     public function subscribe(Subscriber $subscriber) { 
 	    if ( ! Newsletter::isSubscribed($request->email) ) {
 	    	Newsletter::subscribe($subscriber->email, ['ZIPCODE' => $subscriber->zipcode]);
-	        return  Response::json(['sucess' => 'Merci pour votre inscription : )' ]);
+	        return  Response::json(['success' => 'Merci pour votre inscription : )' ]);
 	    }
 	    else {
 	    	return  Response::json(['error' => 'Vous êtes déjà inscrit']);

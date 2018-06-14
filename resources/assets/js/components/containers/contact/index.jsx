@@ -59,7 +59,7 @@ class Contact extends React.Component {
       } 
       this.setState(state);
       if (toSend) {
-        fetch('/contact-lokalero', {
+        fetch('/contact', {
           body: JSON.stringify(entity),
           headers: {
             'content-type': 'application/json',
@@ -69,7 +69,6 @@ class Contact extends React.Component {
           method: 'POST'
         })
           .then(function (response) {
-            console.log(response);
             if (response.status === 200) {
               that.props.alert.success(<div style={{ 'textTransform': 'initial', 'width': '100%' }}>Votre message à bien été envoyé</div>)
             } else {

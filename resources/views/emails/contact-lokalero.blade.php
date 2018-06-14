@@ -1,6 +1,13 @@
+@component('mail::message')
+# Bonjour ophélie, vous avez un nouveau message de {{ $contact['name'] }}:
+@component('mail::panel')
+	{{ $contact['body'] }}
+@endcomponent
 
-<h1> {{ $contact['name'] }} </h1>
+@component('mail::button', ['url' => 'https://www.lokalero.fr'])
+	Lokaléro
+@endcomponent
 
-<div>
-	<p>{{ $contact['body'] }}</p>
-</div>
+Staff,<br>
+{{ config('app.name') }}
+@endcomponent

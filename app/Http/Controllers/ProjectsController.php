@@ -17,7 +17,7 @@ class ProjectsController extends Controller
         $projects = Project::all();
         return Response::json([
             'data' => $this->transformCollection($projects)
-                    ]);
+        ]);
     }
 
     /**
@@ -105,7 +105,7 @@ class ProjectsController extends Controller
             'image' => $project['image'],
             'cover' => $project['image_cover'],
             'slogan' => $project['logo'],
-            'targetAmount' => $project['amount_target'],
+            'target' => $project['amount_target'],
             'activeAmount' => $project['amount_farmed'],
             'active' => $project['active'],
             'finishes' => $project['end_date'],

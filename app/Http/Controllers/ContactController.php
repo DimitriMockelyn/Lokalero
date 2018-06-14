@@ -9,7 +9,7 @@ use Mail;
 
 class ContactController extends Controller
 {
-    public function sendToAdmin(ContactLokaleroRequest $request) {
+    public function admin(ContactLokaleroRequest $request) {
     	Mail::to('ophelie@lokalero.fr')->send(new ContactLokalero($request));
     }
 }

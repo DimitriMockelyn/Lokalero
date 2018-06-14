@@ -6,7 +6,6 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
 class ContactLokalero extends Mailable
 {
     use Queueable, SerializesModels;
@@ -17,6 +16,7 @@ class ContactLokalero extends Mailable
      * @return void
      */
     public $contact;
+
     public function __construct($contact)
     {
         $this->contact = $contact;
@@ -29,9 +29,9 @@ class ContactLokalero extends Mailable
      */
     public function build()
     {
-    return $this
+        return $this
         ->from($this->contact['email'])
         ->subject($this->contact['subject'])
-        ->view('emails.contact-lokalero');
+        ->markdown('emails.contact-lokalero');
     }
 }

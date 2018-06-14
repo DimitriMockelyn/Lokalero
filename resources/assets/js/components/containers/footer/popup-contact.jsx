@@ -80,6 +80,7 @@ class Popup extends React.Component {
               that.onCloseModal(that)();
               that.props.alert.success(<div style={{ 'textTransform': 'initial', 'width': '100%' }}>Vos informations ont bien été enregistrées :)</div>)
             } else {
+              console.log(response)
               that.props.alert.error(<div style={{ 'textTransform': 'initial', 'width': '100%' }}>Une erreur est survenue dans l'envoi de votre requête.</div>)
             }
             // you cannot parse your "success" response, since that is not a valid JSON
