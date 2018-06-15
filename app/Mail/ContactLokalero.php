@@ -9,14 +9,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class ContactLokalero extends Mailable
 {
     use Queueable, SerializesModels;
+    public $contact;
 
     /**
      * Create a new message instance.
-     *
+     * @param App\Http\Requests\ContactLokaleroRequest
      * @return void
      */
-    public $contact;
-
     public function __construct($contact)
     {
         $this->contact = $contact;
