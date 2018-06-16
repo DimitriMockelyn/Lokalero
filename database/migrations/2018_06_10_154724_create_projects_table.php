@@ -26,7 +26,7 @@ class CreateProjectsTable extends Migration
             $table->integer('amount_farmed')->default(0)->unsigned();
             $table->date('end_date');
             $table->boolean('active');
-            $table->integer('contributions')->default(0);
+            $table->integer('contributions')->default(0)->unsigned();
             $table->timestamps();
         });
     }

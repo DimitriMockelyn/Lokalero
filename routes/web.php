@@ -14,7 +14,7 @@ Route::domain('blog.lokalero.app')->group(function () {
     Route::get('/', 'Blog\HomeController@index')->name('index');
 });
 
-Route::prefix('/')->group(function() 
+Route::prefix('/')->group(function()
 {
 	Route::get('/', function(){ return view('welcome'); });
 	Route::name('index')->get('/contact', function() { return view('contact'); });
@@ -23,7 +23,7 @@ Route::prefix('/')->group(function()
 });
 
 
-Route::prefix('api/')->group(function() 
+Route::prefix('api/')->group(function()
 {
 	Route::resource('projects', 'ProjectsController');
 });

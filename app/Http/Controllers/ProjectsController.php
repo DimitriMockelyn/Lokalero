@@ -15,6 +15,7 @@ class ProjectsController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $projects = Project::find(['id' => 2])->load('location');
         return Response::json([
             'data' => $this->transformCollection($projects)
         ]);
@@ -49,9 +50,10 @@ class ProjectsController extends Controller
      */
     public function show(Project $project)
     {
-       $project = Project::find(1);
+        $project = Project::find($project)->load('location');
+       // $project = Project::find($project->id);
         return Response::json([
-            'data' => $this->transform($project)
+            'data' => $this->transformCollection($project)
         ]);
         if(! project) {
             return Response::json([
@@ -98,18 +100,24 @@ class ProjectsController extends Controller
     {
         return array_map([$this, 'transform'], $projects->toArray());
     }
+
     private function transform($project) {
-        return [ 
-            'project' => $project['name'],
+        return [
+            'name' => $project['name'],
             'description' => $project['description'],
             'image' => $project['image'],
             'cover' => $project['image_cover'],
             'slogan' => $project['slogan'],
             'target' => $project['amount_target'],
-            'activeAmount' => $project['amount_farmed'],
+            'pledged' => $project['amount_farmed'],
             'active' => $project['active'],
             'finishes' => $project['end_date'],
-            'contributions' => $project['contributions']
+            'contributions' => $project['contributions'],
+            'Location' => [
+                'street' => $project['location']['street'],
+                'zip' => $project['location']['zipcode'],
+                'city' => $project['location']['city']
+            ]
         ];
     }
 }
