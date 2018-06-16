@@ -5,7 +5,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Project::class, function (Faker $faker) {
     return [
         'location_id' => $faker->numberBetween(1, 100),       
-        'name' => $faker->word(10),
+        'name' => $faker->company(),
         'description' => $faker->paragraph(1),
     	'image' => $faker->imageUrl(640, 480),
     	'image_cover' => $faker->imageUrl(1024, 400),

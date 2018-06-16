@@ -50,8 +50,7 @@ class ProjectsController extends Controller
      */
     public function show(Project $project)
     {
-        $project = Project::find($project)->load('location');
-       // $project = Project::find($project->id);
+        $project = Project::find(['id' => $project->id])->load('location');
         return Response::json([
             'data' => $this->transformCollection($project)
         ]);
