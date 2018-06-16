@@ -15,11 +15,13 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('location_id')->unsigned()->nullable(); 
+            $table->foreign('location_id')->references('id')->on('locations');
             $table->string('name');
             $table->string('description');
             $table->string('image');
             $table->string('image_cover');
-            $table->string('logo');
+            $table->string('slogan');
             $table->integer('amount_target')->default(0)->unsigned();
             $table->integer('amount_farmed')->default(0)->unsigned();
             $table->date('end_date');

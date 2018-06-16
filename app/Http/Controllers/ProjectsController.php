@@ -104,7 +104,7 @@ class ProjectsController extends Controller
             'description' => $project['description'],
             'image' => $project['image'],
             'cover' => $project['image_cover'],
-            'slogan' => $project['logo'],
+            'slogan' => $project['slogan'],
             'target' => $project['amount_target'],
             'activeAmount' => $project['amount_farmed'],
             'active' => $project['active'],
