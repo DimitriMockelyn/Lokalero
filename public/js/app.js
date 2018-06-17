@@ -5375,6 +5375,7 @@ var Popup = function (_React$Component) {
       var entity = {};
       entity['name'] = that.refs.nom.getValue();
       entity['email'] = that.refs.email.getValue();
+      entity['zipcode'] = that.refs.zipcode.getValue();
       entity['comment_connu'] = that.refs.commentconnu.getValue();
       entity['prevenir_lancement'] = that.refs.lancement.checked;
       entity['newsletter'] = that.refs.newsletter.checked;
@@ -5536,7 +5537,15 @@ var Popup = function (_React$Component) {
             floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
             underlineFocusStyle: styles.underlineStyle,
             ref: 'email'
-          }, 'type', 'email'))
+          }, 'type', 'email')),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_material_ui_TextField___default.a, {
+            floatingLabelText: 'Code postal',
+            floatingLabelFixed: true,
+            floatingLabelStyle: styles.floatingLabelStyle,
+            floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+            underlineFocusStyle: styles.underlineStyle,
+            ref: 'zipcode'
+          })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_material_ui_TextField___default.a, {
           floatingLabelText: 'Comment nous avez-vous connu ?',
