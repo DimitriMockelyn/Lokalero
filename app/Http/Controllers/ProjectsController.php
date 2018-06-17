@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use Illuminate\Http\Request;
 use Response;
+
 class ProjectsController extends Controller
 {
     /**
@@ -14,8 +15,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
-        $projects = Project::find(['id' => 2])->load('location');
+        $projects = Project::with('location')->get();
         return Response::json([
             'data' => $this->transformCollection($projects)
         ]);
@@ -112,7 +112,7 @@ class ProjectsController extends Controller
             'active' => $project['active'],
             'finishes' => $project['end_date'],
             'contributions' => $project['contributions'],
-            'Location' => [
+            'location' => [
                 'street' => $project['location']['street'],
                 'zip' => $project['location']['zipcode'],
                 'city' => $project['location']['city']

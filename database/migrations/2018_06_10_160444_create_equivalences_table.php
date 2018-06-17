@@ -15,6 +15,8 @@ class CreateEquivalencesTable extends Migration
     {
         Schema::create('equivalences', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('project_id');
+            // $table->foreign('project_id')references('id')on('projects');
             $table->integer('amount');
             $table->text('description');
             $table->timestamps();

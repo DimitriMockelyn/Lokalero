@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Project;
+use App\Equivalence;
 use App\Location;
+use App\Project;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,7 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(EquivalenceTableSeeder::class);
         $this->call(LocationTableSeeder::class);
         $this->call(ProjectTableSeeder::class);
+
     }
 }
