@@ -45,6 +45,7 @@ class Popup extends React.Component {
       let entity = {};
       entity['name'] = that.refs.nom.getValue();
       entity['email'] = that.refs.email.getValue();
+      entity['zipcode'] = that.refs.zipcode.getValue();
       entity['comment_connu'] = that.refs.commentconnu.getValue();
       entity['prevenir_lancement'] = that.refs.lancement.checked;
       entity['newsletter'] = that.refs.newsletter.checked;
@@ -152,6 +153,14 @@ class Popup extends React.Component {
               underlineFocusStyle={styles.underlineStyle}
               ref='email'
               type='email'
+            />
+            <TextField
+              floatingLabelText="Code postal"
+              floatingLabelFixed={true}
+              floatingLabelStyle={styles.floatingLabelStyle}
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              ref='zipcode'
             />
           </div>
             <TextField
