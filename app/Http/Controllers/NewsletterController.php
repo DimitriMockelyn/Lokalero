@@ -8,7 +8,6 @@ use App\Http\Requests\Subscriber;
 use Newsletter;
 class NewsletterController extends Controller
 {
-	
     public function subscribe(Subscriber $subscriber) { 
     	$newsletter = $subscriber->newsletter ? 'Oui' : 'Non';
     	$prevent = $subscriber->prevenir_lancement ? 'Oui' : 'Non';
