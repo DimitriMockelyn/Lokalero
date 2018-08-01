@@ -41,10 +41,11 @@ class Header extends React.Component {
         />
         <Box 
           type='bouton-maj'
-          image='logo.png'
+          image='Logo_top.png'
           marge='0'
-          padding='37'
+          padding='54'
           margeGauche={'20'}
+          margeHaut={'54'}
           imageEntiere={1}
           imageGauche={1}
           action={() => {window.location.href = window.location.origin+'/'}}
