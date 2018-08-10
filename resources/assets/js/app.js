@@ -18,3 +18,8 @@ require('./components/containers/header');
 require('./components/containers/footer');
 require('./components/containers/app');
 require('./components/containers/contact');
+require('./components/containers/lokal-citoyen');
+require('./components/containers/lokal-association');
+require('./components/containers/lokal-pro');
+require('./components/containers/lokal-collectivite');
+require('./components/containers/crowdfunding');

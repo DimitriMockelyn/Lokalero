@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '../../components/box';
 import {green, orange} from '../../components/colors';
-import {  withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import { Provider } from "react-alert";
 import AlertTemplate from "../app/alert-template";
 import ReactDOM from 'react-dom';

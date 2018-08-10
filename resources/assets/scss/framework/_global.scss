@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+
+  font-family: var(--bodyFont);
+  font-size: var(--globalFontSize);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--white);
+  color: var(--black);
+}
+
+html, body {
+  &.no-overflow {
+    overflow: hidden;
+  }
+}

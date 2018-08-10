@@ -1,0 +1,118 @@
+$fontsPath: '../fonts/SegoeUI/';
+
+@font-face {
+  font-family: 'SegoeUI', 'Helvetica', sans-serif;
+  src: url('#{$fontsPath}SegoeUI.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsPath}SegoeUI.woff') format('woff'),
+  url('#{$fontsPath}SegoeUI.ttf')  format('truetype'),
+  url('#{$fontsPath}SegoeUI.svg#SegoeUI') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+h1, .h1 {
+  font-size: 3rem;
+  line-height: 40px;
+
+  @include mq($from: mobile) {
+    font-size: 3.6rem;
+    line-height: 46px;
+  }
+
+  @include mq($from: tablet) {
+    font-size: 4.8rem;
+    line-height: 58px;
+  }
+}
+
+h2, .h2 {
+  font-size: 2rem;
+  line-height: 30px;
+
+  @include mq($from: mobile) {
+    font-size: 2.6rem;
+    line-height: 36px;
+  }
+
+  @include mq($from: tablet) {
+    font-size: 3.1rem;
+    line-height: 41px;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.8rem;
+  line-height: 28px;
+
+  @include mq($from: tablet) {
+    font-size: 2.2rem;
+    line-height: 34px;
+  }
+
+  @include mq($from: tablet) {
+    font-size: 2.6rem;
+    line-height: 36px;
+  }
+}
+
+h4, .h4 {
+  font-size: 2.1rem;
+  line-height: 31px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+p,
+.bodytext {
+  font-size: 1.6rem;
+  line-height: 25px;
+
+  @include mq($from: mobile) {
+    font-size: 2rem;
+    line-height: 30px;
+  }
+
+  @include mq($from: tablet) {
+    font-size: 2.3rem;
+    line-height: 30px;
+  }
+}
+
+b,
+.bold {
+  font-weight: 700;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.red {
+  color: var(--red);
+}
+
+.white {
+  color: var(--white);
+}
+
+.green {
+  color: var(--green);
+}
+
+

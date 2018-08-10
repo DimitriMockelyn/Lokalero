@@ -1,0 +1,150 @@
+$columns: 12;
+
+$susy: (
+    'columns': susy-repeat(12),
+    'gutters': 0.5,
+    'spread': 'narrow',
+    'container-spread': 'narrow',
+);
+
+.main {
+  padding-top: 75px;
+}
+
+.section {
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0 20px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
+  //background: susy-svg-grid() no-repeat scroll;
+}
+
+$sizes: (
+    'sm',
+    'md',
+    'lg',
+    'wd'
+);
+
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &.align-v {
+    align-items: center;
+  }
+}
+
+.col {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-left: gutter();
+  }
+}
+
+
+.col-half {
+  width: 50%;
+
+
+  &:not(:first-child) {
+    margin: 0;
+  }
+}
+
+.col--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin generateColumns($columns, $size, $breakpointStart: null, $breakpointEnd: null) {
+
+  @if ($breakpointStart) {
+
+    @include mq($from: $breakpointStart) {
+
+
+
+      @for $i from 1 through $columns {
+        .col-#{$size}-#{$i} {
+          width: span($i);
+        }
+
+        .col.offset-#{$size}-#{$i} {
+          margin-left: span($i wide)
+        }
+
+      }
+    }
+
+    @include mq($from: $breakpointStart, $until: $breakpointEnd) {
+      .col.offset-#{$size}-0 {
+        margin-left: 0;
+      }
+    }
+
+  } @else {
+
+    @for $i from 1 through $columns {
+
+      @if ($i == 12) {
+
+        .col.col-#{$size}-#{$i} {
+          margin-left: 0;
+        }
+
+        .col-#{$size}-#{$i} {
+          width: span($i);
+        }
+
+      } @else {
+        .col-#{$size}-#{$i} {
+          width: span($i);
+        }
+      }
+
+      .col.offset-#{$size}-#{$i} {
+        margin-left: span($i wide) + gutter()
+      }
+    }
+
+    .col.offset-#{$size}-0 {
+      margin-left: 0;
+    }
+  }
+}
+
+
+@each $size in $sizes {
+
+  @if $size == 'sm' {
+    @include generateColumns($columns, $size);
+  }
+
+  @else if $size == 'md' {
+    @include generateColumns($columns, $size, mobile, tablet);
+  }
+
+  @else if $size == 'lg' {
+    @include generateColumns($columns, $size, tablet);
+  }
+
+  @else if $size == 'wd' {
+    @include generateColumns($columns, $size, desktop);
+  }
+}
+

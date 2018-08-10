@@ -1,0 +1,29 @@
+.title-container {
+  display: inline-flex;
+  position: relative;
+  padding: 20px 35px 0;
+  margin-bottom: 30px;
+
+  @include mq($from: tablet) {
+    padding: 30px 50px 0;
+    margin-bottom: 50x;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    width: 35px;
+
+    @include mq($from: tablet) {
+      width: 50px;
+    }
+  }
+
+  .icon-title-left {
+    left: 0;
+  }
+
+  .icon-title-right {
+    right: 0;
+  }
+}

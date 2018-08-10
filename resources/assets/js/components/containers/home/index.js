@@ -14,7 +14,6 @@ const Home = props => (
     <Experience />
     <BorneEtMoi />
     <InfoSoutien />
-    
   </div>  
 );
 

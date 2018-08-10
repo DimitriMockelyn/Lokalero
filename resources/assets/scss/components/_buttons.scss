@@ -1,0 +1,65 @@
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.align-h {
+  flex-direction: column;
+  @include mq($from: mobile) {
+    flex-direction: row;
+  }
+}
+
+.button-container.align-v {
+  flex-direction: column;
+
+  .button {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 2.4rem;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 0 20px;
+  text-align: center;
+  box-shadow: 8px 8px 3px 0 rgba(0, 0, 0, 0.15);
+
+  @include mq($from: tablet) {
+    font-size: 3rem;
+  }
+}
+
+.button--big {
+  height: 80px;
+  padding: 0 40px;
+  font-size: 3rem;
+
+  @include mq($from: tablet) {
+    font-size: 4.3rem;
+  }
+}
+
+.button--orange {
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+.button--green {
+  color: var(--white);
+  background-color: var(--green);
+}
+
+
+.button--dark {
+  color: var(--white);
+  background-color: var(--dark);
+}

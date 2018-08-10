@@ -173,7 +173,7 @@ class Box extends React.Component {
   render() {
     const style = this.computeStyle();
     const onClick = this.computeOnClick();
-    return <div style={style} onClick={onClick} className={this.props.className || ''} >
+    return <div style={style} onClick={onClick} className={this.props.className || ''}>
       {this.props.texte && this.props.texte.split('\\n').map(txt => {return <div>{txt}</div>})}
       {this.props.children}
       <Modal open={this.state.open} onClose={this.onCloseModal(this)} center>

@@ -3,6 +3,8 @@ import { Route, Link } from "react-router-dom";
 import Home from "../home";
 import Header from "../header";
 import Footer from "../footer/index";
+import FooterHTML5 from "../footer/index.html5";
+import headerHTML5 from "../header/index.html5";
 import { Provider } from "react-alert";
 import AlertTemplate from "./alert-template";
 import ReactDOM from 'react-dom';

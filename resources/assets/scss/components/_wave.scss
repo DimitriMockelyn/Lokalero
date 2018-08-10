@@ -1,0 +1,58 @@
+.section--wave {
+  padding: 100px 0 0;
+  background: url('../images/lokal/wave.svg') center center no-repeat;
+  background-size: contain;
+
+  @include mq($from: mobile) {
+    padding: 150px 0 0;
+  }
+
+  .title-container {
+    margin-bottom: 0;
+  }
+
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--green);
+  }
+
+  .icon-wave {
+    display: block;
+    width: 100%;
+  }
+
+  .section--wave__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+}
+
+.row--wave {
+  height: 200px;
+}
+
+.section--green {
+  background-color: var(--green);
+
+  .button-container {
+    padding: 100px 0;
+  }
+}
+

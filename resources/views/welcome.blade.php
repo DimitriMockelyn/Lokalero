@@ -11,4 +11,5 @@
     <body>
     <div id="main-app"></div>
     <script src="{{asset('js/app.js?v=1')}}" charset="UTF-8"></script>
+    </body>
 </html>

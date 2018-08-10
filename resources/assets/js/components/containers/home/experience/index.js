@@ -16,7 +16,7 @@ class Principe extends React.Component {
   }
    render() {
      return (
-    <div id='video' style={{    'align-items': 'center',
+    <div id='video' style={{ 'align-items': 'center',
       'display': 'flex',
       'flex-direction': 'column'}}>
     <Box
