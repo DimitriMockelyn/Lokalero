@@ -47,6 +47,7 @@ const Principe = props => (
       <Box
 
         type="bouton"
+        action={() => {window.location.href = window.location.origin+'/lokal-citoyen'}}
       >
         <Box image="Citoyen.png" hauteur={100} largeur={100} imageEntiere={1} />
         <Box texte="Lokal\ncitoyen(ne)" padding="5" />
@@ -54,6 +55,7 @@ const Principe = props => (
       <Box
 
         type="bouton"
+        action={() => {window.location.href = window.location.origin+'/lokal-association'}}
       >
         <Box
           image="Association.png"
@@ -66,6 +68,7 @@ const Principe = props => (
       <Box
 
         type="bouton"
+        action={() => {window.location.href = window.location.origin+'/lokal-pro'}}
       >
         <Box
           image="Professionnel.png"
@@ -78,6 +81,7 @@ const Principe = props => (
       <Box
 
         type="bouton" 
+        action={() => {window.location.href = window.location.origin+'/lokal-collectivite'}}
       >
         <Box
           image="Collectivite.png"
@@ -90,12 +94,14 @@ const Principe = props => (
       <Box
 
         type="bouton"
+        action={() => {window.location.href = window.location.origin+'/plateforme-de-crowdfunding'}}
       >
         <Box
           image="Plateforme_crowdfunding.png"
           hauteur={100}
           largeur={100}
           imageEntiere={1}
+
         />
         <Box texte="Plateforme de\ncrowdfunding" padding="5" largeurMax={1} />
       </Box>
