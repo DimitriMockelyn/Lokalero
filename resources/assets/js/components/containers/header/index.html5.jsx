@@ -31,13 +31,15 @@ class HeaderHTML5 extends React.Component {
     return (
         <header className="section header">
           <div className="row">
+          <a href={window.location.origin}>
             <Icon icon="lokalero" />
+            </a>
   
-            <a href="#" className="link link--regular orange">
+            <a href={window.location.origin+"#video"} className="link link--regular orange">
               <span className="link__text upper">La borne Lokaléro</span>
             </a>
   
-            <a href="#" className="link link--bordered green">
+            <a href={window.location.origin+"/contact"} className="link link--bordered green">
               <span className="link__text upper">Nous contacter</span>
             </a>
             

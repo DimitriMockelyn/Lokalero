@@ -13,3 +13,68 @@
 
 @import "components";
 
+.orange-medium {
+    font-size: 25px;
+    color: orange;
+  }
+
+  .row.row-modal {
+    margin-left: 30px;
+  }
+
+  .before-radios {
+    margin-bottom: 10px;
+  }
+  .double-textfield > div {
+    margin-right: 10px;
+  }
+
+  .styles_modal__gNwvD {
+    padding : 2.2em;
+  }
+
+  .styles_modal__gNwvD p {
+    margin-top: 0;
+  }
+
+  .row.row-modal input {
+    margin-top: auto;
+    margin-bottom: auto;
+    -webkit-appearance: radio;
+  }
+
+  
+  #contact p {
+    margin-top: 0px;
+  }
+
+  .line-je-suis > div > div {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 160px;
+    height: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .line-je-suis > div {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    width: 100%;
+    font-size: 125%;
+  }
+  
+  #main p {
+    margin-top: 0px;
+  }
+
+  @media (min-width: 50em) {#main p {
+    font-size: 1.8rem;
+  }}
+
+  @media screen and (min-width: 1440px) {
+    #videoFb {
+      width: 900px !important;
+      height: 510px !important; 
+    }
+  }

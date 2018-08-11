@@ -120,18 +120,18 @@ class Popup extends React.Component {
     };
     return (
       <MuiThemeProvider>
-          <div className='orange-medium'>Merci de votre intérêt pour LOKALERO !</div>
-          {!this.props.fromAction && <div className='detail'>La borne LOKALERO est en cours de développement et n'est pas encore commercialisée.</div>}
-          {this.props.fromAction && <div className='detail'>Le site est en cours de développement et cette fonctionnalité sera bientôt disponible :)</div>}
-          {!this.props.fromAction && <div className='before-radios'>Vous pouvez vous inscrire ici pour :</div>}
-            {this.props.fromAction && <div className='before-radios'>Vous souhaitez en savoir plus sur les bornes ? </div>}
-            {this.props.fromAction && <div>Envoyez-nous un message personnalisé dans la rubrique "Nous contacter"</div>}
-          {this.props.fromAction && <div className='before-radios'>Ou inscrivez-vous ici pour :</div>}
+          <p className='orange-medium'>Merci de votre intérêt pour LOKALERO !</p>
+          {!this.props.fromAction && <p className='detail'>La borne LOKALERO est en cours de développement et n'est pas encore commercialisée.</p>}
+          {this.props.fromAction && <p className='detail'>Le site est en cours de développement et cette fonctionnalité sera bientôt disponible :)</p>}
+          {!this.props.fromAction && <p className='before-radios'>Vous pouvez vous inscrire ici pour :</p>}
+            {this.props.fromAction && <p className='before-radios'>Vous souhaitez en savoir plus sur les bornes ? </p>}
+            {this.props.fromAction && <p>Envoyez-nous un message personnalisé dans la rubrique "Nous contacter"</p>}
+          {this.props.fromAction && <p className='before-radios'>Ou inscrivez-vous ici pour :</p>}
             <div className='row row-modal'>
-          <input type='radio' ref='lancement' id='lancement' onClick={this.onInputChange('lancement')}/><div>Être prévenu(e) au plus tôt du lancement des bornes</div>
+          <input type='radio' ref='lancement' id='lancement' onClick={this.onInputChange('lancement')}/><p>Être prévenu(e) au plus tôt du lancement des bornes</p>
           </div>
           <div className='row row-modal'>
-          <input type='radio' ref='newsletter' id='newsletter' onClick={this.onInputChange('newsletter')}/><div>Recevoir notre newsletter trimestrielle</div>
+          <input type='radio' ref='newsletter' id='newsletter' onClick={this.onInputChange('newsletter')}/><p>Recevoir notre newsletter trimestrielle</p>
           </div>
           <div className='double-textfield'>
           <TextField 

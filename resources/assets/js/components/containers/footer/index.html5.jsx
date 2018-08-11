@@ -1,12 +1,27 @@
 import React from 'react';
 import Icon from '../../containers/app/icons/Icon'
 import ReactDOM from 'react-dom';
+import Modal from 'react-responsive-modal';
+import PopupContact from './popup-contact';
 
 class FooterHtml5 extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {open: false}
   }
-  
+  onOpenModal() {
+    this.setState({ open: true });
+  }
+
+  onCloseModal(that) {
+    return function(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      that.setState({ open: false });
+    }
+  }
   render()  {
     return (
       <footer className="section footer">
@@ -42,16 +57,16 @@ class FooterHtml5 extends React.Component {
                 <div className="col col-lg-4">
                   <div className="col__footer--right">
                     <h2 className="title">Suivez-nous</h2>
-                    <p>S'abonner à la newsletter</p>
+                    <p onClick={() => {this.onOpenModal()}}>S'abonner à la newsletter</p>
   
                     <ul className="social-links">
                       <li>
-                        <a href="#" title="#">
+                        <a title="#" onClick={() => {this.onOpenModal()}}>
                           <Icon icon="email" />
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="#">
+                        <a href="https://www.facebook.com/lokalero/" title="#">
                           <Icon icon="facebook" />
                         </a>
                       </li>
@@ -72,6 +87,9 @@ class FooterHtml5 extends React.Component {
               </div>
             </div>
           </div>
+          <Modal open={this.state.open} onClose={this.onCloseModal(this)} center>
+            <PopupContact onCloseModal={this.onCloseModal(this)}/>
+          </Modal>
         </footer>
     );
   }

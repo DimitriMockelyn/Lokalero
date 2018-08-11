@@ -174,7 +174,7 @@ class Box extends React.Component {
     const style = this.computeStyle();
     const onClick = this.computeOnClick();
     return <div style={style} onClick={onClick} className={this.props.className || ''}>
-      {this.props.texte && this.props.texte.split('\\n').map(txt => {return <div>{txt}</div>})}
+      {this.props.texte && this.props.texte.split('\\n').map(txt => {return <p>{txt}</p>})}
       {this.props.children}
       <Modal open={this.state.open} onClose={this.onCloseModal(this)} center>
         <PopupContact fromAction={true} onCloseModal={this.onCloseModal(this)}/>

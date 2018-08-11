@@ -107,10 +107,10 @@ class Contact extends React.Component {
           imageHorPct='30'
           imageCover={1}
           />
-          <Box enLigne={1} className='contact-page'>
-          <Box largeurMax={1} gauche={1} hauteurMax={1} className='contact-form'>
-            <Box couleur={orangee} texte='ENVOYEZ NOUS UN MESSAGE' margeBas={15} complementStyle={{'fontSize':'20px', 'fontWeight': 'bold'}}></Box>
-            <Box complementStyle={{'marginBottom':'auto'}} enLigne={1}>
+          <Box enLigne={1} className='contact-page' largeurMax={1}>
+          <Box largeurMax={1} gauche={1} hauteurMax={1} className='contact-form' largeurMax={1}>
+            <Box couleur={orangee} texte='ENVOYEZ NOUS UN MESSAGE' margeBas={15} complementStyle={{'fontSize':'20px', 'fontWeight': 'bold'}} largeurMax={1}></Box>
+            <Box complementStyle={{'marginBottom':'auto'}} enLigne={1} largeurMax={1}>
               <Box complementStyle={{'width': '60%'}}>
             <TextField 
               floatingLabelText="Nom"
@@ -159,13 +159,13 @@ class Contact extends React.Component {
                 </Box>
             </Box>
           </Box>
-          <Box  margeBas={50} gauche={1} className='contact-general'>
+          <Box  margeBas={50} gauche={1} className='contact-general' complementStyle={{'width': '40%'}} >
               <Box couleur={orangee} texte='NOUS CONTACTER' margeBas={15} gauche={1} padding='20px 0' complementStyle={{'fontSize':'20px', 'fontWeight': 'bold'}}></Box>
-              <Box couleur='black' gauche={1}><a style={{'color':'black'}} href='mailto:ophelie@lokalero.fr'>ophelie@lokalero.fr</a></Box>
-              <Box couleur='black' gauche={1} margeBas={50}>06 73 04 00 82</Box>
+              <Box couleur='black' gauche={1}><a style={{'color':'black'}} href='mailto:ophelie@lokalero.fr'><p>ophelie@lokalero.fr</p></a></Box>
+              <Box couleur='black' gauche={1} margeBas={50}><p>06 73 04 00 82</p></Box>
               <Box couleur={orangee} gauche={1} texte="REJOIGNEZ L'AVENTURE" margeBas={15} padding='20px 0' complementStyle={{'fontSize':'20px', 'fontWeight': 'bold', 'whiteSpace':'pre'}}></Box>
-              <Box couleur='black' gauche={1}>Retrouvez la famille des lokal héro sur Facebook.</Box>
-              <Box couleur='black' gauche={1}>Venez rencontrer notre équipe sur Paris. 19e.</Box>
+              <Box couleur='black' gauche={1}><p>Retrouvez la famille des lokal héro sur Facebook.</p></Box>
+              <Box couleur='black' gauche={1}><p>Venez rencontrer notre équipe sur Paris. 19e.</p></Box>
           </Box>
           </Box>
     </MuiThemeProvider>);

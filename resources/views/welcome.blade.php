@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1">
         <meta name="csrf-token" id='meta-token' content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="{{asset('css/app.css?v=1')}}">
+        <link rel="stylesheet" href="{{asset('css/main.css?v=1')}}">
         <title> Lokalero </title>
     </head>
     <body>
