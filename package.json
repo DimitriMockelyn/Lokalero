@@ -29,9 +29,11 @@
     "sanitize.css": "^6.0.0"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.5.7",
     "material-ui": "^0.20.1",
     "node-sass": "^4.9.2",
     "postcss-css-variables": "^0.9.0",
+    "rc-tooltip": "^3.7.2",
     "react-responsive-modal": "^3.0.3",
     "sass-loader": "^7.0.3",
     "susy": "^3.0.5",

@@ -1,11 +1,95 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import Icon from '../../containers/app/icons/Icon'
+import FourColumns from '../../components/FourColumns'
+import FourColumnsWave from '../../components/FourColumnsWave'
+import ThreeColumns from '../../components/ThreeColumns'
 
 
 class LokalAssociation extends React.Component {
   constructor(props) {
     super(props);
+    this.firstSection = {
+      title: 'Pourquoi c\'est cool',
+      col: [
+        {
+          title: 'Je communique plus largement sur mon projet',
+          text: 'En le faisant apparaître sur les bornes Lokaléro',
+          icon: 'communication'
+        },
+        {
+          title: 'Je multiplie les chances d’atteindre mon objectif',
+          text: 'En ayant le soutien des commerçants de mon quartier',
+          icon: 'objectif'
+        },
+        {
+          title: 'J’utilise la borne comme un tronc de collecte',
+          text: 'En présentant le projet en physique aux habitants',
+          icon: 'dons'
+        },
+        {
+          title: 'Je remercie tous mes supers donateurs (et les futurs)',
+          text: 'Et je leurs explique ce qui a été mis en place grâce à eux',
+          icon: 'merci'
+        }
+      ],
+    }
+  
+    this.secondSection = {
+      title: 'Mes super-pouvoirs',
+      col: [
+        {
+          title: 'Communiquer',
+          text: 'Je mets mon projet en valeur sur plusieurs bornes du quartier <b>pendant 2 mois</b>. Ainsi, je le fais connaître auprès d’un maximum de citoyens.',
+          icon: 'informer'
+        },
+        {
+          title: 'Démultiplier',
+          text: 'Je touche plus facilement <b>le grand public</b>, ce « 3e cercle » difficile à atteindre lors d’une campagne de collecte. Et la mairie soutient mon projet.',
+          icon: 'choisir'
+        },
+        {
+          title: 'Animer',
+          text: 'Je multiplie mon impact en allant <b>à la rencontre des citoyens.</b> Je leur explique le projet et ils peuvent tout de suite le soutenir sur la borne.',
+          icon: 'agir'
+        },
+        {
+          title: 'Informer',
+          text: 'J’explique aux habitants <b>ce que devient le projet</b> 6 mois après son financement, délai pendant lequel il reste consultable sur la borne.',
+          icon: 'suivre'
+        }
+      ],
+      text: 'Voici les super-pouvoirs que vous aurez en tant que plateforme de crowdfunding une fois que notre solution sera développée.',
+      buttons: [
+        {
+          text: 'Je découvre les projets',
+          url: '/',
+          target: '_self',
+          isDisabled: true,
+          tooltip: 'Le site est en cours de contruction. Nous travaillons dur pour vous permettre de retrouver les premiers projets en ligne.',
+          color: 'orange',
+        },
+        {
+          text: 'Je découvre les bornes',
+          url: '/',
+          target: '_self',
+          isDisabled: false,
+          tooltip: false,
+          color: 'orange',
+        }
+      ]
+    }
+  
+    this.thirdSection = {
+      col1: {
+        title: 'Le truc en plus : la proximité',
+        introduction: 'Je suis fortement susceptible de connaître les porteurs du projet puisque cela se passe à côté de chez moi !',
+        text: 'Par exemple, je donne pour le potager collectif dans le parc derrière la mairie, la recherche sur la maladie dont le petit Théo de l\'école primaire est atteint, l’équipe de basket du village etc.',
+      },
+      col2: {
+        buttons: []
+      }
+    }
   }
   
   render() {
@@ -16,280 +100,55 @@ class LokalAssociation extends React.Component {
     };
     
     return (
-        <div>
-  
-          <header className="header-lokal">
-            <div className="header-lokal__background" style={sectionStyle}>
-              <p>Je suis un(e)</p>
-            </div>
-            <nav role="navigation">
-              <ul className="nav-lokal">
-                <li className="nav-lokal__item">
-                  <a href="/lokal-citoyen" className="link">
-                    <span className="link__text">Lokal citoyen(ne)</span>
-                  </a>
-                  <Icon icon="citoyen"/>
-                </li>
-                <li className="nav-lokal__item current--item">
-                  <a href="/lokal-association" className="link">
-                    <span className="link__text">Lokal association</span>
-                  </a>
-                  <Icon icon="association"/>
-                </li>
-                <li className="nav-lokal__item">
-                  <a href="/lokal-pro" className="link">
-                    <span className="link__text">Lokal professionnel(le)</span>
-                  </a>
-                  <Icon icon="pro"/>
-                </li>
-                <li className="nav-lokal__item">
-                  <a href="/lokal-collectivite" className="link">
-                    <span className="link__text">Lokal collectivité</span>
-                  </a>
-                  <Icon icon="collectivite"/>
-                </li>
-                <li className="nav-lokal__item">
-                  <a href="/plateforme-de-crowdfunding" className="link">
-                    <span className="link__text">Plateforme de <br/>crowdfunding</span>
-                  </a>
-                  <Icon icon="crowdfunding"/>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          
-          <section className="section section--four-columns">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col text-center">
-                    <div className="title-container red">
-                      <h2 className="h1 bold upper">Mes supers pouvoirs</h2>
-                      <Icon icon="title-left"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <h2 className="h2 bold orange">Communiquer</h2>
-                      <p>Je mets mon projet en valeur
-                        sur plusieurs bornes du
-                        quartier pendant 1 mois. Ainsi,
-                        je le fais connaître auprès d’un
-                        maximum de citoyens.</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <h2 className="h2 bold orange">Démultiplier</h2>
-                      <p>Je touche plus facilement
-                        le public, ce « 3e cercle »
-                        difficile à atteindre lors d’une
-                        campagne de collecte. Et la
-                        mairie soutient mon projet.</p>
-                    </div>
-                  </div>
-                  <div className="col offset-md-0 col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <h2 className="h2 bold orange">Animer</h2>
-                      <p>Je multiplie mon impact en
-                        allant à la rencontre des
-                        citoyens. Je leur explique le
-                        projet et ils peuvent tout de
-                        suite le soutenir sur la borne.</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <h2 className="h2 bold orange">Informer</h2>
-                      <p>J’explique aux habitants ce
-                        que devient le projet 4 mois
-                        après son financement, délai
-                        pendant lequel il reste
-                        consultable sur la borne.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <section className="section section-frame">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col offset-md-1 col-md-10 offset-lg-3 col-lg-6">
-                    <div className="frame-container">
-                      <h2 className="h2">La condition</h2>
-                      
-                      <p>Déposer son projet sur une plateforme de crowdfunding
-                        partenaire et demander à bénéficier du service de bornes LOKALERO.
-                        En fonction de la nature de votre projet,
-                        LOKALERO vous orientera vers la plateforme la plus adaptée
-                        à vos besoins. Puis, au cours de votre dernier mois de collecte,
-                        il sera mis en valeur sur les bornes de votre région pour
-                        augmenter votre nombre de contributeurs.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <section className="section section--four-columns section--highlight">
-            <div className="wrapper">
-              <div className="container">
-  
-                <div className="row">
-                  <div className="col text-center">
-                    <div className="title-container green">
-                      <h2 className="h1 bold upper">Pourquoi c'est cool</h2>
-                      <Icon icon="title-right"/>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="row">
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="impact-communication"/>
-  
-                      <h3 className="h3 bold">
-                        Je démultiplie l’impact
-                        de mes communications
-                      </h3>
-                      <p>En diffusant plus largement
-                        les contenus produits</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="link"/>
-  
-                      <h3 className="h3 bold">
-                        Je renforce le lien entre élus
-                        locaux et administrés
-                      </h3>
-                      <p>En tamponnant les projets du logo
-                        officiel de la mairie, </p>
-                    </div>
-                  </div>
-                  <div className="col offset-md-0 col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="idea"/>
-  
-                      <h3 className="h3 bold">
-                        Je démultiplie l’impact
-                        de mes communications
-                      </h3>
-                      <p>En leur permettant de choisir les projets
-                        qu’ils jugent les plus pertinents</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="network"/>
-  
-                      <h3 className="h3 bold">
-                        Je bénéficie d’un effet
-                        de levier
-                      </h3>
-                      <p>En mobilisant de mulitiples donateurs
-                        pour développer la vie locale</p>
-                    </div>
-                  </div>
-                </div>
-              
-              </div>
-            </div>
-          </section>
-  
-          <section className="section section--four-columns section--highlight">
-            <div className="wrapper">
-              <div className="container">
+      <div>
         
-                <div className="row">
-                  <div className="col text-center">
-                    <div className="title-container green">
-                      <h2 className="h1 bold upper">Pourquoi c'est cool</h2>
-                      <Icon icon="title-right"/>
-                    </div>
-                  </div>
-                </div>
+        <header className="header-lokal">
+          <div className="header-lokal__background" style={sectionStyle}>
+            <p>Je suis un(e)</p>
+          </div>
+          <nav role="navigation">
+            <ul className="nav-lokal">
+              <li className="nav-lokal__item">
+                <a href="/lokal-citoyen" className="link">
+                  <span className="link__text">Lokal citoyen(ne)</span>
+                </a>
+                <Icon icon="citoyen"/>
+              </li>
+              <li className="nav-lokal__item nav__current--item">
+                <a href="/lokal-association" className="link">
+                  <span className="link__text">Lokal association</span>
+                </a>
+                <Icon icon="association"/>
+              </li>
+              <li className="nav-lokal__item">
+                <a href="/lokal-pro" className="link">
+                  <span className="link__text">Lokal professionnel(le)</span>
+                </a>
+                <Icon icon="pro"/>
+              </li>
+              <li className="nav-lokal__item">
+                <a href="/lokal-collectivite" className="link">
+                  <span className="link__text">Lokal collectivité</span>
+                </a>
+                <Icon icon="collectivite"/>
+              </li>
+              <li className="nav-lokal__item">
+                <a href="/plateforme-de-crowdfunding" className="link">
+                  <span className="link__text">Plateforme de <br/>crowdfunding</span>
+                </a>
+                <Icon icon="crowdfunding"/>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <FourColumns content={this.firstSection}/>
+
+        <FourColumnsWave content={this.secondSection}/>
+
+        <ThreeColumns content={this.thirdSection}/>
         
-                <div className="row">
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="communication"/>
-              
-                      <h3 className="h3 bold">
-                        Je renforce la communication
-                        autour de mon projet
-                      </h3>
-                      <p>En le faisant apparaître sur
-                        les bornes Lokaléro</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="objectif"/>
-              
-                      <h3 className="h3 bold">
-                        Je démultiplie mes chances
-                        d’atteindre mon objectif
-                      </h3>
-                      <p>En crédibilisant mon projet car il a
-                        un soutien institutionnel</p>
-                    </div>
-                  </div>
-                  <div className="col offset-md-0 col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="dons"/>
-              
-                      <h3 className="h3 bold">
-                        J’utilise la borne comme un tronc de collecte
-                      </h3>
-                      <p>En organisant des temps de
-                        présentation du projet en physique</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="merci"/>
-              
-                      <h3 className="h3 bold">
-                        Je remercie tous mes supers
-                        donateurs (et les futurs)
-                      </h3>
-                      <p>Et en leur expliquant ce qui a été
-                        mis en place grâce à eux</p>
-                    </div>
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-          </section>
-          
-          <section className="section section--agir">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col col--center">
-                    <div className="button-container">
-                      <a href="#" className="button button--big button--green">
-                        <span className="button__label">J'agis</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-        </div>
+      </div>
     )
   }
 }

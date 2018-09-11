@@ -1,0 +1,97 @@
+.nav-main {
+  display: flex;
+  align-items: center;
+
+  .is-lokal-page & {
+    padding-right: 40px;
+
+    @include mq($from: tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
+.nav-lokal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: var(--white);
+  height: calc(100vh - 100px);
+  background-color: var(--dark);
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    height: auto;
+  }
+}
+
+.nav-lokal__item {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+
+
+  @include mq($from: tablet) {
+    width: 20%;
+    height: 80px;
+  }
+
+  .icon {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    display: none;
+    width: 90px;
+    z-index: 1;
+
+    @include mq($from: tablet) {
+      left: 50%;
+      bottom: 100%;
+      transform: translate3d(-50%, -15px, 0);
+    }
+  }
+
+  .icon-pro {
+    width: 80px;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 1.6rem;
+
+    @include mq($from: tablet) {
+      height: 80px;
+      font-size: 2rem;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    .link {
+      background-color: var(--orange);
+    }
+
+    .icon {
+      display: block;
+    }
+  }
+}
+
+
+.nav__current--item {
+
+  .link {
+    background-color: var(--orange);
+  }
+
+  .icon {
+    display: block;
+  }
+}

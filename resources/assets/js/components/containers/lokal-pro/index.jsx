@@ -1,11 +1,85 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import Icon from '../../containers/app/icons/Icon'
+import FourColumns from '../../components/FourColumns'
+import FourColumnsWave from '../../components/FourColumnsWave'
+import ThreeColumns from '../../components/ThreeColumns'
 
 
 class LokalPro extends React.Component {
   constructor(props) {
     super(props);
+  
+    this.firstSection = {
+      title: 'Pourquoi c\'est cool',
+      col: [
+        {
+          title: 'Je renforce mon ancrage sur le territoire',
+          text: 'En montrant que je contribue à la dynamique de mon quartier',
+          icon: 'ancrage-local'
+        },
+        {
+          title: 'Je soutiens les projets qui me tiennent à coeur',
+          text: 'Tout en exerçant mon activité professionnelle',
+          icon: 'soutiens'
+        },
+        {
+          title: 'Je favorise les actes positifs et la bonne humeur',
+          text: 'En leur permettant de s’engager sans leur prendre de temps supplémentaire',
+          icon: 'smile'
+        },
+        {
+          title: 'Je suscite la fierté de mes équipes et clients \n',
+          text: 'En donnant à mon activité une nouvelle dimension porteuse de sens',
+          icon: 'proud'
+        }
+      ],
+    }
+  
+    this.secondSection = {
+      title: 'Mes super-pouvoirs',
+      col: [
+        {
+          title: 'Soutenir',
+          text: 'Grâce à la borne, mon engagement est visible et concret. Je fais de mon commerce / cabinet un lieu de vie et de solidarité locale. ',
+          icon: 'informer'
+        },
+        {
+          title: 'Choisir',
+          text: 'Je reste maître des projets qui sont diffusés sur la borne. Je les choisis tous les mois parmi une liste pré-sélectionnée.',
+          icon: 'choisir'
+        },
+        {
+          title: 'Valoriser',
+          text: 'Je propose à mes clients ou patients une intéraction innovante et solidaire. Avant de les recevoir en RDV,  leur  temps d’attente est valorisé.',
+          icon: 'agir'
+        },
+        {
+          title: 'Fidéliser',
+          text: 'Je renforce les liens avec mes clients, patients et salariés en leur permettant d’avoir un impact social dans leurs activités du quotidien.',
+          icon: 'suivre'
+        }
+      ],
+      text: 'Voici les super-pouvoirs que vous aurez en tant que plateforme de crowdfunding une fois que notre solution sera développée.',
+      buttons: [
+        {
+          text: 'Je découvre les projets',
+          url: '/',
+          target: '_self',
+          isDisabled: true,
+          tooltip: 'Le site est en cours de contruction. Nous travaillons dur pour vous permettre de retrouver les premiers projets en ligne.',
+          color: 'orange',
+        },
+        {
+          text: 'Je retrouve les bornes',
+          url: '/',
+          target: '_self',
+          isDisabled: false,
+          tooltip: false,
+          color: 'dark',
+        }
+      ]
+    }
   }
   
   render() {
@@ -57,143 +131,10 @@ class LokalPro extends React.Component {
               </ul>
             </nav>
           </header>
-          
-          <section className="section section--four-columns">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col text-center">
-                    <div className="title-container orange">
-                      <h2 className="h1 bold upper">Pourquoi c'est cool</h2>
-                      <Icon icon="title-left"/>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="ancrage-local"/>
-                      <h2 className="h2 bold">J'occume mon temps d'attente grâce à la borne</h2>
-                      <p>En faisant un geste citoyen <br/>et solidaire</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="soutiens"/>
-                      <h2 className="h2 bold">J'occume mon temps d'attente grâce à la borne</h2>
-                      <p>En découvrant les projets <br/>proches de chez moi</p>
-                    </div>
-                  </div>
-                  <div className="col offset-md-0 col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="smile"/>
-                      <h2 className="h2 bold">Je suis bénéficiaire du
-                        projet que je soutiens</h2>
-                      <p>En recevant des contreparties et <br/>
-                        en dynamisant mon quartier</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content text-center">
-                      <Icon icon="proud"/>
-                      <h2 className="h2 bold">Je vois concrètement
-                        l’impact de mon action
-                      </h2>
-                      <p>En constatant la réalisation <br/>
-                        effective du projet</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <section className="section section--wave">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col text-center">
-                    <div className="title-container">
-                      <h2 className="h1 bold upper">Mes super pouvoirs</h2>
-                      <Icon icon="title-left"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <section className="section section--four-columns section--green">
-            <div className="wrapper">
-              <div className="container">
-                <div className="row">
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content">
-                      <Icon icon="informer"/>
-                      <h2 className="h2 text-center bold upper white">Soutenir</h2>
-                      <p className="text-justify">
-                        Grâce à la borne, <b>mon
-                        engagement est visible</b>
-                        et concret. Je fais de mon
-                        commerce / cabinet un lieu
-                        de vie et de solidarité locale.</p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content">
-                      <Icon icon="choisir"/>
-                      <h2 className="h2 text-center bold upper white">Choisir</h2>
-                      <p className="text-justify">
-                        Je reste <b>maître des projets</b>
-                        qui sont diffusés sur la 
-                        borne. Je les choisis tous 
-                        les mois parmi une liste 
-                        pré-sélectionnée.</p>
-                    </div>
-                  </div>
-                  <div className="col offset-md-0 col-md-6 col-lg-3">
-                    <div className="col__content">
-                      <Icon icon="agir"/>
-                      <h2 className="h2 text-center bold upper white">Valoriser</h2>
-                      <p className="text-justify">
-                        Je propose à mes clients
-                        ou patients une <b>intéraction
-                        innovante et solidaire</b>. Avant
-                        de les recevoir en RDV, leur
-                        temps d’attente est valorisé.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col col-md-6 col-lg-3">
-                    <div className="col__content">
-                      <Icon icon="suivre"/>
-                      <h2 className="h2 text-center bold upper white">Fidéliser</h2>
-                      <p className="text-justify">
-                        Je renforce les liens avec
-                        mes clients, patients et
-                        salariés en leur permettant
-                        d’avoir un <b>impact social</b> dans
-                        leurs activités du quotidien.</p>
-                    </div>
-                  </div>
-                </div>
   
-                <div className="row">
-                  <div className="col">
-                    <div className="button-container align-h">
-                      <a href="/" className="button button--big button--bordered button--orange">
-                        <span className="button__label">Je découvre les projets</span>
-                      </a>
-        
-                      <a href="/" className="button button--big button--bordered button--dark">
-                        <span className="button__label">Je découvre les bornes</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <FourColumns content={this.firstSection}/>
+  
+          <FourColumnsWave content={this.secondSection}/>
           
           <section className="section section--three-columns">
             <div className="wrapper">

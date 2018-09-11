@@ -13,8 +13,8 @@ $fontsPath: '../fonts/SegoeUI/';
 
 
 h1, .h1 {
-  font-size: 3rem;
-  line-height: 40px;
+  font-size: 2.8rem;
+  line-height: 38px;
 
   @include mq($from: mobile) {
     font-size: 3.6rem;
@@ -83,7 +83,8 @@ p,
 }
 
 b,
-.bold {
+.bold,
+strong {
   font-weight: 700;
 }
 
