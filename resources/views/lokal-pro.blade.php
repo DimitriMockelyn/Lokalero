@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="page">
-    <div id="headerHTML5"></div>
+    <div id="headerHTML5" class="is-lokal-page"></div>
     <div id="main" class="main">
         <div id="lokal-pro"></div>
     </div>

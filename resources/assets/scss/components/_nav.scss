@@ -53,6 +53,18 @@
     }
   }
 
+  &:nth-child(odd) {
+    .icon {
+      left: auto;
+      right: 10px;
+
+      @include mq($from: tablet) {
+        right: auto;
+        left: 50%;
+      }
+    }
+  }
+
   .icon-pro {
     width: 80px;
   }

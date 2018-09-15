@@ -4,11 +4,51 @@ import Icon from '../../containers/app/icons/Icon'
 import FourColumns from '../../components/FourColumns'
 import FourColumnsWave from '../../components/FourColumnsWave'
 import ThreeColumns from '../../components/ThreeColumns'
-
+import HeaderLokal from '../../components/HeaderLokal'
 
 class LokalCollectivite extends React.Component {
   constructor(props) {
     super(props);
+  
+    this.header = {
+      backgroundImage: 'images/lokal/4.jpg',
+      menu: [
+        {
+          title: 'Lokal citoyen(ne)',
+          url: '/lokal-citoyen',
+          icon: 'citoyen',
+          current: false,
+        },
+        {
+          title: 'Lokal association',
+          url: '/lokal-association',
+          icon: 'association',
+          backgroundImage: '',
+          current: false,
+        },
+        {
+          title: 'Lokal professionnel(le)',
+          url: '/lokal-pro',
+          icon: 'pro',
+          backgroundImage: '',
+          current: false,
+        },
+        {
+          title: 'Lokal collectivité',
+          url: '/lokal-collectivite',
+          icon: 'collectivite',
+          backgroundImage: '',
+          current: true,
+        },
+        {
+          title: 'Plateforme de <br/>crowdfunding',
+          url: '/plateforme-de-crowdfunding',
+          icon: 'crowdfunding',
+          backgroundImage: '',
+          current: false,
+        }
+      ]
+    }
   
     this.firstSection = {
       title: 'Pourquoi c\'est cool',
@@ -102,46 +142,8 @@ class LokalCollectivite extends React.Component {
     
     return (
       <div>
-        
-        <header className="header-lokal">
-          <div className="header-lokal__background" style={sectionStyle}>
-            <p>Je suis un(e)</p>
-          </div>
-          <nav role="navigation">
-            <ul className="nav-lokal">
-              <li className="nav-lokal__item">
-                <a href="/lokal-citoyen" className="link">
-                  <span className="link__text">Lokal citoyen(ne)</span>
-                </a>
-                <Icon icon="citoyen"/>
-              </li>
-              <li className="nav-lokal__item">
-                <a href="/lokal-association" className="link">
-                  <span className="link__text">Lokal association</span>
-                </a>
-                <Icon icon="association"/>
-              </li>
-              <li className="nav-lokal__item">
-                <a href="/lokal-pro" className="link">
-                  <span className="link__text">Lokal professionnel(le)</span>
-                </a>
-                <Icon icon="pro"/>
-              </li>
-              <li className="nav-lokal__item current--item">
-                <a href="/lokal-collectivite" className="link">
-                  <span className="link__text">Lokal collectivité</span>
-                </a>
-                <Icon icon="collectivite"/>
-              </li>
-              <li className="nav-lokal__item">
-                <a href="/plateforme-de-crowdfunding" className="link">
-                  <span className="link__text">Plateforme de <br/>crowdfunding</span>
-                </a>
-                <Icon icon="crowdfunding"/>
-              </li>
-            </ul>
-          </nav>
-        </header>
+  
+        <HeaderLokal content={this.header}/>
 
         <FourColumns content={this.firstSection}/>
 

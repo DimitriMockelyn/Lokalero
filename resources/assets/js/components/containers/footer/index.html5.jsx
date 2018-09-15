@@ -63,7 +63,7 @@ class FooterHtml5 extends React.Component {
   }
   render()  {
     return (
-      <footer className="section footer" role="content-info" itemscope itemtype="http://schema.org/WPFooter">
+      <footer className="section footer" role="content-info" itemScope itemType="http://schema.org/WPFooter">
           <div className="wrapper">
             <div className="container">
               <div className="row">
@@ -118,7 +118,7 @@ class FooterHtml5 extends React.Component {
                         <li><a href="#">CGU</a></li>
                       </ul>
     
-                      <p><span itemProp="copyrightYear">2018</span> <strong className="up" itemprop="copyrightHolder" itemscope itemtype="http://schema.org/LocalBusiness">Lokaléro</strong> - Tous droits réservés - France</p>
+                      <p><span itemProp="copyrightYear">2018</span> <strong className="up" itemProp="copyrightHolder" itemScope itemType="http://schema.org/LocalBusiness">Lokaléro</strong> - Tous droits réservés - France</p>
                     </div>
                   </div>
                 

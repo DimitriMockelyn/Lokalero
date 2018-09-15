@@ -32,6 +32,7 @@
   padding: 10px 20px;
   text-align: center;
   box-shadow: 8px 8px 3px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
 
   @include mq($from: tablet) {
     font-size: 3rem;
@@ -48,18 +49,38 @@
   }
 }
 
+.button--white {
+  color: var(--black);
+}
+
 .button--orange {
   color: var(--white);
   background-color: var(--orange);
+
+  &:focus,
+  &:hover {
+    color: var(--white);
+  }
 }
 
 .button--green {
   color: var(--white);
   background-color: var(--green);
+
+  &:focus,
+  &:hover {
+    background-color: color-mod(#0be09e a(90%));
+  }
 }
 
 
 .button--dark {
   color: var(--white);
   background-color: var(--dark);
+
+  &:focus,
+  &:hover {
+    color: var(--white);
+    background-color: color-mod(#2e3e4e a(75%));
+  }
 }

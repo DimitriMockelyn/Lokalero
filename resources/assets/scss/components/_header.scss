@@ -102,61 +102,7 @@
   }
 }
 
-.header-lokal__trigger {
-  position: fixed;
-  right: 14px;
-  top: 14px;
-  width: 30px;
-  height: 30px;
-  z-index: 1000;
-  overflow: hidden;
 
-  .border {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 3px;
-    border-radius: 3px;
-    transform-origin: 50% 50%;
-    background-color: var(--orange);
-    transition: all 0.3s ease;
-  }
-
-  @include mq($from: tablet) {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-.border--middle {
-  top: 50%;
-  transform: translate3d(0, -50%, 0);
-
-  .mobNavOpened & {
-    transform: translate3d(-150%, -50%, 0);
-  }
-}
-
-.border--top {
-  top: 0;
-  transform: translate3d(0, 0, 0);
-
-  .mobNavOpened & {
-    top: 50%;
-    transform: translate3d(0, -50%, 0) rotate(-45deg);
-  }
-}
-
-.border--bottom {
-  bottom: 0;
-  transform: translate3d(0, 0, 0);
-
-  .mobNavOpened & {
-    bottom: 40%;
-    transform: translate3d(0, -50%, 0) rotate(45deg);
-  }
-}
 
 .header-lokal {
   position: fixed;

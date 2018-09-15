@@ -1,5 +1,6 @@
 let mix = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,11 +13,21 @@ let mix = require('laravel-mix');
  */
 
 mix.react('resources/assets/js/app.js', 'public/js')
-   //.sass('resources/assets/sass/app.scss', 'public/css')
-   .sass('resources/assets/scss/main.scss', 'public/css')
+//.sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/scss/main.scss', 'public/css')
     .options({
       postCss: [
-        require('postcss-css-variables')()
+        //require('postcss-color-function')(),
+        require('postcss-css-variables'),
+        require('postcss-preset-env')({
+          browsers: 'last 2 versions',
+          stage: 3,
+          features: {
+            'color-mod-function': {
+              unresolved: 'warn'
+            }
+          }
+        })
       ],
       processCssUrls: false
     });

@@ -11,7 +11,7 @@ class HeaderHTML5 extends React.Component {
   
   render()  {
     return (
-      <header className="section header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+      <header className="section header" role="banner" itemScope itemType="http://schema.org/WPHeader">
         <div className="row">
           <a href={window.location.origin}>
             <Icon icon="lokalero" />

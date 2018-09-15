@@ -1,4 +1,5 @@
 import React from 'react'
+import Tooltip from 'rc-tooltip';
 import Icon from '../containers/app/icons/Icon'
 
 class FourColumnsWave extends React.Component {
@@ -40,16 +41,30 @@ class FourColumnsWave extends React.Component {
                   </div>
                 )}
               </div>
+              
+              <div className="row">
+                <div className="col">
+                  <p className="text-center" dangerouslySetInnerHTML={{__html: content.text}} />
+                </div>
+              </div>
   
               {content.buttons.length > 0 &&
       
                 <div className="row">
                   <div className="col">
                     <div className="button-container align-h">
-                      {content.buttons.map((button, key) =>
-                        <a href={button.url} className={`button button--big button--bordered button--${button.color}`} key={key}>
-                          <span className="button__label">{button.text}</span>
-                        </a>
+                      {content.buttons.map((button, key) => {
+                        return button.tooltip && button.isDisabled ?
+                            <Tooltip placement="top" trigger={['hover']} key={key} overlay={<span>Le site et la solution sont en cours de construction. Nous travaillons dur pour vous permettre de retrouver rapidement des premiers projets en ligne.</span>}>
+                            <a href={button.url} className={`button button--big disabled button--bordered button--${button.color}`}>
+                              <span className="button__label">{button.text}</span>
+                            </a>
+                            </Tooltip>
+                            :
+                            <a href={button.url} className={`button button--big button--bordered button--${button.color}`} key={key}>
+                              <span className="button__label">{button.text}</span>
+                            </a>
+                        }
                       )}
                     </div>
                   </div>

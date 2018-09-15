@@ -5,28 +5,36 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 class HeaderLokal extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      navOpened: false
+    }
   }
-  
   
   render () {
     const { content } = this.props
     
-    let navOpened = false;
     const nav = document.getElementsByClassName('header-lokal')[0];
     
-    function handleClick(e) {
+    const handleClick = (e) =>  {
       e.preventDefault();
-  
-      navOpened = !navOpened
       
-      if (navOpened) {
+      
+      if (!this.state.navOpened) {
         document.body.classList.add('mobNavOpened');
         disableBodyScroll(nav);
+  
+        this.setState({
+          navOpened: true
+        })
+        
       } else {
         document.body.classList.remove('mobNavOpened');
         enableBodyScroll(nav);
+  
+        this.setState({
+          navOpened: false
+        })
       }
-     
     }
   
     let sectionStyle = {
@@ -45,21 +53,21 @@ class HeaderLokal extends React.Component {
             <ul className="nav-lokal">
         
               {content.menu.map((item, key) =>
-                  <li className={"nav-lokal__item" + (item.current ? ' nav__current--item' : '')} key={"nav__item-" + key}>
-                    <a href={item.url} className="link">
-                      <span className="link__text" dangerouslySetInnerHTML={{__html: item.title}} />
-                    </a>
-                    <Icon icon={item.icon}/>
-                  </li>
+                <li className={"nav-lokal__item" + (item.current ? ' nav__current--item' : '')} key={"nav__item-" + key}>
+                  <a href={item.url} className="link">
+                    <span className="link__text" dangerouslySetInnerHTML={{__html: item.title}} />
+                  </a>
+                  <Icon icon={item.icon}/>
+                </li>
               )}
       
             </ul>
           </nav>
         </header>
-        <button className="header-lokal__trigger" id="header-lokal__trigger" onClick={handleClick}>
-          <span className="border border--top"/>
-          <span className="border border--middle"/>
-          <span className="border border--bottom"/>
+        <button className="hamburger header-lokal__trigger" aria-expanded={this.state.navOpened} id="header-lokal__trigger" onClick={handleClick}>
+          <span className="hamburger__line"/>
+          <span className="hamburger__line"/>
+          <span className="hamburger__line"/>
         </button>
       </div>
     )

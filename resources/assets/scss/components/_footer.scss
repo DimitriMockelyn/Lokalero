@@ -74,14 +74,33 @@
 
 .mentions-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex: 1;
+  margin-bottom: 20px;
   font-size: 1.2rem;
+
+  @include mq($from: mobile) {
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
 
   li {
     position: relative;
+    display: inline-flex;
+    width: calc(100% / 3);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include mq($from: mobile) {
+      width: auto;
+      text-align: right;
+    }
 
     &:not(:first-child) {
-      margin-left: 15px;
+      @include mq($from: mobile) {
+        margin-left: 15px;
+      }
 
       &:before {
         position: absolute;
@@ -93,7 +112,11 @@
         display: block;
         content: '-';
         font-size: 1.2rem;
-        transform: translate3d(-12px, -50%, 0);
+        transform: translate3d(-5px, -50%, 0);
+
+        @include mq($from: mobile) {
+          transform: translate3d(-12px, -50%, 0);
+        }
       }
     }
   }
